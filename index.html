@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone Scroll Simulation</title>
+    <style>
+        /* Inline CSS to keep everything in one file */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.dropbox.com/scl/fi/c9tmfvtr1z1bq85vz1yim/background.avif?rlkey=r5q97t8e50t99f1bfsutpx5fv&raw=1');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .conversation-scroll {
+            position: relative;
+            overflow-y: scroll;
+            height: 100vh;
+            width: 100%;
+            z-index: 2; /* Ensure it sits above the background */
+            margin: 0;
+            padding-top: 50px; /* Adjust to match any messenger header spacing */
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+
+        .conversation-scroll img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Stationary Background Layer -->
+    <div class="background"></div>
+    
+    <!-- Scrolling Conversation Layer -->
+    <div class="conversation-scroll">
+        <img src="https://www.dropbox.com/scl/fi/5ibf0rjm07rgle2xuxztn/test-scroll.png?rlkey=h60lv0zefvqley8xhtohkbwu0&raw=1" alt="Conversation">
+    </div>
+</body>
+</html>
